@@ -1,0 +1,27 @@
+{
+  "name": "xcodefeed",
+  "description": "What's happening w/ Xcode",
+  "version": "1.0.0",
+  "author": "Peter deHaan <peter@deseloper.com> (https://about.me/peterdehaan)",
+  "bin": {
+    "xcodefeed": "cli.js"
+  },
+  "bugs": {
+    "url": "https://github.com/pdehaan/xcodefeed/issues"
+  },
+  "dependencies": {
+    "axios": "^0.20.0"
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/pdehaan/xcodefeed#readme",
+  "keywords": ["xcode"],
+  "license": "MPL-2.0",
+  "main": "lib.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pdehaan/xcodefeed.git"
+  },
+  "scripts": {
+    "test": "COUNT=3 ./cli.js"
+  }
+}
