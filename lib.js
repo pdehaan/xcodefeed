@@ -4,9 +4,15 @@ module.exports = {
   getReleases,
 };
 
-async function getReleases(count = 10) {
+async function getReleases(count = 10, channels = "") {
   const feedUri = "https://xcodereleases.com/data.json";
   const res = await axios.get(feedUri);
+  if (channels.length) {
+    // Convert the [comma separated] `channels` string into an array.
+    channels = channels.split(",");
+    // Overwrite res.data with a filtered array of the specified channel releases.
+    res.data = res.data.filter(release => Object.keys(release.version.release).some(ch => channels.includes(ch)));
+  }
   return res.data.slice(0, count).map((release) => {
     const d = release.date;
     release.date.date = new Date(d.year, d.month - 1, d.day);

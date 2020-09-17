@@ -7,6 +7,15 @@ A lazy wrapper around the https://xcodereleases.com/data.json API.
 ## USAGE
 
 ```sh
-npx pdehaan/xcodefeed # fetches latest 10 releases
-COUNT=2 npx pdehaan/xcodefeed # fetches latest 2 releases
+# Fetch latest 10 releases:
+npx pdehaan/xcodefeed
+
+# Fetch latest 2 releases:
+COUNT=2 npx pdehaan/xcodefeed
+
+# Fetch latest 5 "beta" channel releases:
+CHANNELS=beta COUNT=5 npx pdehaan/xcodefeed
+
+# Fetch latest 2 "gm" or "gmSeed" channel releases:
+CHANNELS=gm,gmSeed COUNT=2 npx pdehaan/xcodefeed
 ```
